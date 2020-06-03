@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Coming Soon v5.0.7 (https://startbootstrap.com/template-overviews/coming-soon)
- * Copyright 2013-2019 Start Bootstrap
+ * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
  */
 
@@ -12,7 +12,7 @@ body {
   height: 100%;
   min-height: 35rem;
   position: relative;
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-weight: 300;
 }
 
@@ -22,11 +22,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   font-weight: 700;
 }
 
-video {
+picture {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -38,15 +38,15 @@ video {
   z-index: 0;
 }
 
-@media (pointer: coarse) and (hover: none) {
+/* @media (pointer: coarse) and (hover: none) {
   body {
-    background: url("../img/bg-mobile-fallback.jpg") #002E66 no-repeat center center scroll;
+    background: url("../img/bg.jpg") #002e66 no-repeat center center scroll;
     background-position: cover;
   }
   body video {
     display: none;
   }
-}
+} */
 
 .overlay {
   position: absolute;
@@ -86,6 +86,52 @@ video {
 
 .masthead .masthead-content p {
   font-size: 1.2rem;
+}
+
+.masthead .masthead-content .contact-link {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+.masthead .masthead-content .contact-link:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #fed330 5%, rgba(0, 0, 0, 0) 10%);
+
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  z-index: -1;
+
+  will-change: width;
+  transform: rotate(-1deg);
+  transform-origin: left bottom;
+}
+
+.masthead .masthead-content .contact-link:hover:before {
+  width: 0;
+}
+
+/*
+* animation styles
+*/
+
+.masthead .masthead-content .contact-link:before {
+  transition: width 0.1s ease-out;
+}
+
+.masthead .masthead-content .contact-link:hover::before {
+  transition-duration: 0.15s;
 }
 
 .masthead .masthead-content p strong {
@@ -189,7 +235,7 @@ video {
     width: 4rem;
   }
   .social-icons ul > li > a:hover {
-    background-color: #002E66;
+    background-color: #002e66;
   }
 }
 
@@ -198,7 +244,9 @@ video {
   border-color: #cd9557;
 }
 
-.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:hover {
   background-color: #ba7c37 !important;
   border-color: #ba7c37 !important;
 }
